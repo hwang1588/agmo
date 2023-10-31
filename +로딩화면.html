@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <!--  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">-->
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+  <meta name="HandheldFriendly" content="true">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#000008">
+  <meta name="naver-site-verification" content="" />
+  <meta name="google-site-verification" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:title" content="Myce.io">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://myce.io">
+  <meta property="og:image" content="img/img_og.jpg">
+  <meta name="description" content="Myce.io">
+  <meta name="og:description" content="Myce.io">
+  <meta name="keyword" content="Myce.io">
+  <meta name="og:keyword" content="Myce.io">
+  <title>MYCE</title>
+
+  <script>
+    function isMobile() {
+      var UserAgent = navigator.userAgent;
+      if (UserAgent.match(
+          /iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i
+        ) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    if (isMobile()) {
+      location.href = "/index_m.html"; //모바일페이지
+    } else {}
+  </script>
+  <!--css:S-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!--css:E-->
+
+</head>
+
+<!--인트로 진입 로딩이미지::s-->
+  
+
+<body>
+
+  
+  <!--인트로 진입 로딩이미지::e-->
+  <div class="container">
+   <div id="loading-wrapper2">
+    <div class="bg-white"></div>
+    <div class="bloom center text-dark wow fadeIn fs-1" data-wow-duration="2s" data-wow-delay="1s">
+      I'm Bloom
+    </div>
+    <div class="bloom center text-dark drama"></div>
+  </div>
+    <div class="switch text-center text-test green" style=" padding-top: 1000px">asdf</div>
+
+  </div>
+
+  <!--JQUERY:S-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <!--JQUERY:E-->
+
+  <!--gsap.js::s-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+  <!--gsap.js::e-->
+
+  <script>
+    window.setTimeout(function() {
+      $("#loading-wrapper2").fadeOut(2000); //요소를 2000ms동안 fadeout으로 안보이게함
+      $(".ready").addClass("aaa bbb"); //요소에 요소를 추가함
+    }, 4000); //settimeout 4000ms의 딜레이를 준 다음 기능작동
+
+    window.setTimeout(function() {
+      $(".drama").addClass("est"); //요소에 요소를 추가함
+    }, 1000); //settimeout 1000ms의 딜레이를 준다음 기능 작동
+  </script>
+
+  <script>
+    gsap.to(".green", {
+      scrollTrigger: ".green", // start the animation when ".box" enters the viewport (once)
+      x: 500,
+      delay: 2,
+    });
+  </script>
+
+  <!--BOOTSTRAP.JS:S-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <!--BOOTSTRAP.JS:E-->
+
+  <!--AOS.JS:S-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!--AOS.JS:E-->
+
+  <!--WOW.JS:S-->
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!--WOW.JS:E-->
+
+
+
+</body>
+
+</html>
