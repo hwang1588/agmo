@@ -1,0 +1,72 @@
+https://tailwindcss.com/docs/container
+
+- 컨테이너를 기본적으로 중앙배치 하기위해서는 js파일에 옵션 설정 해줘야함.
+구성파일의 섹션에서 center옵션을 true로 theme.container설정하십시오.
+
+tailwind.config.js
+module.exports = {
+  theme: {
+    container: {
+      center: true,
+    },
+  },
+}
+
+- 컨테이너 좌우 x축에 패딩값을 추가하려면 js파일에서 옵션 설정을 해야함
+
+tailwind.config.js
+module.exports = {
+  theme: {
+    container: {
+      padding: '.75rem',
+    },
+  },
+}
+
+
+*테일윈드는 기본적으로 모든 전역 설정이 모바일부터 시작해서 큰화면으로 적용됨
+** 'lg: ' 같은 접두사를 붙일경우 모바일에서 시작한 전역설정들이 lg화면 이상일때부터 다르게 적용됨
+
+-grid-
+한줄에 3개씩 배치하겠다= grid grid-cols-3
+한줄에 3개씩 배치중 2+1로 하겠다= col-span-2, col-span-1
+
+한줄에 12개까지 배치하겠다= gird gird-cols-12
+한줄에 12개씩 배치중 처음 시작점부터 마지막 시작점까지 하겠다= col-start-1 col-end-13
+
+gird타입 row를 한개만 만들겠다= gird gird-rows-1
+grid타입 row를 4개를 만들겠다= grid gird-rows-4 grid-flow-col
+
+
+-flex-
+1. 기본 작성 
+<div class="container"> //컨테이너 역할
+	<div class="flex flex-row"> //row 역할 
+		<div class="basis-1/12"> //basis1/12는 col-1에 해당함
+		</div>
+	</div>
+</div>
+
+2. flex로 이루어진 구조에서 내용을 xy중앙에 위치시킬때는 부모요소에 flex를 써야함
+<div class="flex flex-row p-3 gap-x-3 text-gray-100 text-center">
+	<div class="basis-full border-2 p-2 flex items-center justify-center" style="height:500px;">
+	12/12(02)
+	</div>
+</div>
+
+3. flex-row 밑 basis-* 사용시에 x축의 빈공간을 채우기 위해서는 grow를 사용해야함
+<div class="flex flex-row p-3 gap-x-3 text-gray-100 text-center">
+   	<div class="basis-1/12 border-2 p-2">1/12(01)</div>
+		<div class="grow"></div> <!--grow를 통해 공백을 대신함-->
+	<div class="basis-3/12 border-2 p-2">3/12(05)</div>
+  </div>
+
+4. order-* 를통해서 dom트리에 불러오는 basis-*의 순서를 변경할 수 있음
+<div class="container h-1000 bg-cyan-800 items-center">
+  <div class=" flex flex-row p-3 gap-x-3 text-gray-100 text-center">
+    <div class="basis-1/12 border-2 p-2 order-last">1/12(01)</div> //해당 basis가 두번째에 위치하게 됨
+    <div class="basis-1/12 border-2 p-2">1/12(02)</div> //해당 basis가 첫번째에 위치하게 됨
+</div>
+</div>
+
+5. 

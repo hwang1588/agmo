@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass.
+// -----------------------------------------------------------------------------
+@charset "utf-8";
+//Base
+@use "base/reset" as *;
+@use "base/typography" as *;
+//Utilties
+@use "utilities/mixins" as *;
+@use "utilities/helpers-rem" as *;
+//@use "utilities/helpers-rem-vw" as *; //rem, vw 단위 사용시 필요한 시트
+//Layout
+@use "layout/grid" as *;
+//Custom (*always last import)
+@use "utilities/functions" as *;
+
+$pad:                     767.8px; //pad
+$pc:                      1199.8px; //pc
+
+//=============
+//전역 start
+//=============
+
+//rem 사용시 필요한 스타일
+//:root{
+//font-size: 16px;
+//}
+
+body{background-color: black;}
+
+p {
+    display: inline;
+    font-size: 30px;
+    background: 
+    linear-gradient(90deg, rgb(156, 112, 29) 0%, rgb(255, 236, 138) 20% 80%, rgb(156, 112, 29) 100%);
+    /* linear-gradient(90deg, rgba(255,0,0,.8), rgba(255,0,0,0) 0%),
+    linear-gradient(90deg, rgba(0,255,0,.8), rgba(0,255,0,0) 50%),
+    linear-gradient(90deg, rgba(0,0,255,.8), rgba(0,0,255,0) 100%); */
+    color: transparent;
+    -webkit-background-clip: text;
+}
+        
+//=============
+//'%pad' start
+//=============
+@media (min-width: $pad) {
+
+//rem 사용시 필요한 스타일
+//:root{
+//font-size: 16px;
+//}
+
+    }
+
+//=============
+//'%pc' start
+//=============
+@media (min-width: $pc) {
+
+//rem 사용시 필요한 스타일
+//:root{
+//font-size: 16px;
+//}
+
+    }

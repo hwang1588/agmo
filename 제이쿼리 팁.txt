@@ -1,0 +1,61 @@
+JS (ES6) 명령법 정리
+
+1. let x, y; ==x와 y 변수를 생성하고 각 변수는 ','로 구분기입
+
+****************************************************************
+2. 모든 JS식별자는 대소문자를 구분함
+let lastname, lastName;
+lastName = "Doe";
+lastname = "Peterson";
+****************************************************************
+3. JS는 일반 띄어쓰기에 영향을 받지않음
+****************************************************************
+4. =는 '같다'가 아닌  '할당하겠다' 라는 뜻
+****************************************************************
+5. ==는 '같다' 라는 뜻
+***********************************************************
+6. 앞의 숫자를 따옴표로 처리하면 뒤에오는 숫자는 문자열로 처리됨
+<p id="demo"></p>
+
+<script>
+let x = "5" + 2 + 3;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+== 523
+****************************************************************
+7. cars를 배열형태(Arrays)로선언 (배열은 0부터 시작)
+
+<p id="demo"></p>
+
+<script>
+const cars = ["Saab","Volvo","BMW"];
+
+document.getElementById("demo").innerHTML = cars[0];
+</script> == Saab
+****************************************************************
+8.  객체 사용(  '이름:값' 으로 한쌍을 이룬다)
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  firstName : "John",
+  lastName  : "Doe",
+  age     : 50,
+  eyeColor  : "blue"
+};
+document.getElementById("demo").innerHTML =
+person.firstName + ' is ' + ' dead ' == John is dead
+</script>
+****************************************************************
+9. html onclick 사용방법
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
